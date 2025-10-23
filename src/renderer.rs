@@ -184,9 +184,13 @@ impl Renderer {
         });
 
         // Create surface
-        let surface = instance
-            .create_surface(window)
-            .map_err(|e| format!("Failed to create surface: {}", e))?;
+        // SAFETY: The window reference is valid for the lifetime of the surface
+        let surface: wgpu::Surface<'static> = unsafe {
+            let raw_surface = instance
+                .create_surface(window)
+                .map_err(|e| format!("Failed to create surface: {}", e))?;
+            std::mem::transmute(raw_surface)
+        };
 
         // Request adapter
         let adapter = instance
