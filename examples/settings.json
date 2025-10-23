@@ -1,0 +1,22 @@
+{
+  "window": {
+    "title": "My Engine Example",
+    "width": 1280,
+    "height": 720,
+    "fullscreen": false,
+    "resizable": true,
+    "vsync": true
+  },
+  "renderer": {
+    "target_fps": 60,
+    "msaa_samples": 4,
+    "fov": 70.0,
+    "near_plane": 0.1,
+    "far_plane": 1000.0
+  },
+  "audio": {
+    "master_volume": 1.0,
+    "music_volume": 0.8,
+    "sfx_volume": 1.0
+  }
+}
