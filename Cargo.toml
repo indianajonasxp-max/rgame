@@ -1,13 +1,13 @@
 [package]
-name = "my_engine"  # Change this to a unique name on crates.io
+name = "rgame"
 version = "0.1.0"
 edition = "2021"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["IJXP <jonas.borchardt@proton.me>"]
 description = "A modular Rust game engine library with Vulkan backend via wgpu"
 readme = "README.md"
-homepage = "https://github.com/yourusername/my_engine"
-repository = "https://github.com/yourusername/my_engine"
-license = "MIT"
+homepage = "https://github.com/indianajonasxp-max/rgame"
+repository = "https://github.com/indianajonasxp-max/rgame"
+license = "Apache-2.0"
 keywords = ["gamedev", "game-engine", "wgpu", "ecs", "vulkan"]
 categories = ["game-engines", "graphics", "rendering"]
 exclude = [
