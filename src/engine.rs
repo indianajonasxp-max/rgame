@@ -4,8 +4,7 @@
 
 use winit::{
     event::*,
-    event_loop::{ControlFlow, EventLoop},
-    window::WindowBuilder,
+    event_loop::EventLoop,
 };
 use crate::{
     audio::AudioManager,

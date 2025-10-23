@@ -3,7 +3,6 @@
 //! Provides simple audio playback for music and sound effects.
 
 use rodio::{Decoder, OutputStream, OutputStreamHandle, Sink, Source};
-use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 use std::sync::Arc;
@@ -73,11 +72,13 @@ impl AudioManager {
         let decoder = source.decoder()?;
         sink.set_volume(self.master_volume * self.sfx_volume);
         sink.append(decoder);
+        
+        // Detach the sink so it plays independently
+        // Note: We don't track detached sinks as they manage their own lifecycle
         sink.detach();
 
         // Clean up finished sinks
         self.sfx_sinks.retain(|s| !s.empty());
-        self.sfx_sinks.push(sink);
 
         Ok(())
     }

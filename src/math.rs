@@ -108,7 +108,7 @@ impl Transform {
     }
 
     /// Look at a target position
-    pub fn look_at(&mut self, target: Vec3, up: Vec3) {
+    pub fn look_at(&mut self, target: Vec3, _up: Vec3) {
         let direction = (target - self.position).normalize();
         self.rotation = Quat::from_rotation_arc(Vec3::NEG_Z, direction);
     }

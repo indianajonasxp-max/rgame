@@ -21,7 +21,7 @@ impl Component for crate::math::Transform {}
 impl Component for crate::math::Transform2D {}
 
 /// An entity in the game world
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 pub struct Entity {
     id: EntityId,
     name: String,

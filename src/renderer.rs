@@ -4,7 +4,7 @@
 
 use wgpu::util::DeviceExt;
 use winit::window::Window;
-use glam::{Mat4, Vec3, Vec4};
+use glam::{Mat4, Vec3};
 use bytemuck::{Pod, Zeroable};
 use crate::config::RendererConfig;
 
@@ -304,6 +304,7 @@ impl Renderer {
                 module: &shader,
                 entry_point: "vs_main",
                 buffers: &[Vertex::desc()],
+                compilation_options: Default::default(),
             },
             fragment: Some(wgpu::FragmentState {
                 module: &shader,
@@ -313,6 +314,7 @@ impl Renderer {
                     blend: Some(wgpu::BlendState::ALPHA_BLENDING),
                     write_mask: wgpu::ColorWrites::ALL,
                 })],
+                compilation_options: Default::default(),
             }),
             primitive: wgpu::PrimitiveState {
                 topology: wgpu::PrimitiveTopology::TriangleList,
